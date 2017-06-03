@@ -1,0 +1,24 @@
+{
+  "plugins": [
+    "prettier"
+  ],
+  "rules": {
+    "no-extra-semi": "off",
+    "no-mixed-spaces-and-tabs": "off"
+  },
+  "env": {
+    "jest": true,
+    "node": true,
+    "browser": true,
+    "webextensions": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2016,
+    "sourceType": "module",
+    "ecmaFeatures": {}
+  }
+}
