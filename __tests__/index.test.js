@@ -1,5 +1,4 @@
 describe('index', () => {
-
   beforeEach(() => {
     jest.resetModules();
   });
@@ -11,7 +10,7 @@ describe('index', () => {
       return {
         isChrome: true,
         highlight: mockChrome,
-      }
+      };
     });
     const highlight = require('../src/index').default;
     expect(highlight).toBe(mockChrome);
@@ -24,12 +23,11 @@ describe('index', () => {
       return {
         isChrome: false,
         highlight: mockChrome,
-      }
+      };
     });
     // now we should be given the firefox highlight module
     const firefox = require('../src/firefox').highlight;
     const highlight = require('../src/index').default;
     expect(highlight).toBe(firefox);
   });
-
 });
