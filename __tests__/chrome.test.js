@@ -1,7 +1,6 @@
 import { match, url, dim, isChrome } from '../src/chrome';
 
 describe('chrome', () => {
-
   describe('match', () => {
     test('match empty text', () => {
       expect(match()).toEqual(`<match></match>`);
@@ -30,7 +29,8 @@ describe('chrome', () => {
     });
 
     test('url for one term', () => {
-      const text = 'checkout https://github.com/devtools-html/ for the best devtools';
+      const text =
+        'checkout https://github.com/devtools-html/ for the best devtools';
       const term = 'https://github.com/devtools-html/';
       expect(url(text, term)).toEqual(
         `checkout <url>${term}</url> for the best devtools`
@@ -38,7 +38,8 @@ describe('chrome', () => {
     });
 
     test('url multiple terms', () => {
-      const text = 'tweet https://github.com/devtools-html/ for https://github.com/devtools-html/ and https://github.com/devtools-html/ its good';
+      const text =
+        'tweet https://github.com/devtools-html/ for https://github.com/devtools-html/ and https://github.com/devtools-html/ its good';
       const term = 'https://github.com/devtools-html/';
       expect(url(text, term)).toEqual(
         `tweet <url>${term}</url> for <url>${term}</url> and <url>${term}</url> its good`
@@ -71,5 +72,4 @@ describe('chrome', () => {
   test('isChrome knows this is not Firefox', () => {
     expect(isChrome).toBe(true);
   });
-
 });

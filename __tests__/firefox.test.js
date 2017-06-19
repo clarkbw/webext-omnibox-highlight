@@ -1,7 +1,6 @@
 import { match, url, dim } from '../src/firefox';
 
 describe('firefox', () => {
-
   test('match is the same', () => {
     const text = 'the millenials are the laziest generation';
     const term = 'millenials';
