@@ -1,19 +1,45 @@
 'use strict';
 
-// Currently Firefox auto-highlights but Chrome requires this XML syntax
-function highlight$2() {
+Object.defineProperty(exports, '__esModule', { value: true });
+
+// https://developer.chrome.com/extensions/omnibox#type-SuggestResult
+function match$1() {
   var text = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
   var match = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
 
-  return text.replace(match, '<match>' + match + '</match>');
+  return text.replace(RegExp(match, 'g'), '<match>' + match + '</match>');
+}
+
+function url$1() {
+  var text = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var match = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+  return text.replace(RegExp(match, 'g'), '<url>' + match + '</url>');
+}
+
+function dim$1() {
+  var text = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var match = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+  return text.replace(RegExp(match, 'g'), '<dim>' + match + '</dim>');
 }
 
 var isChrome = navigator.userAgent.indexOf('Firefox') === -1;
 
-function highlight$3(text) {
+// Firefox doesn't support any of the XML syntax that Chrome supports so
+// these functions are all just dummy functions
+function match$2(text) {
   return text;
 }
 
-var highlight$$1 = isChrome ? highlight$2 : highlight$3;
+function url$2(text) {
+  return text;
+}
 
-module.exports = highlight$$1;
+var match$$1 = isChrome ? match$1 : match$2;
+var url$$1 = isChrome ? url$1 : url$2;
+var dim$$1 = isChrome ? dim$1 : url$2;
+
+exports.match = match$$1;
+exports.url = url$$1;
+exports.dim = dim$$1;

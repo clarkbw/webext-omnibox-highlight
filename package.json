@@ -1,6 +1,6 @@
 {
   "name": "webext-omnibox-highlight",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Handle the highlight of matches in the omnibox for both Firefox and Chrome",
   "main": "dist/index.js",
   "module": "src/index.js",
@@ -8,6 +8,7 @@
   "license": "ISC",
   "scripts": {
     "test": "jest",
+    "coverage": "yarn test -- --coverage",
     "build": "rollup -c",
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"{src,__{tests,setups}__}/**/*.js\" rollup.config.js",
     "eslint-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
