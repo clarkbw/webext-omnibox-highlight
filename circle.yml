@@ -1,4 +1,6 @@
 machine:
+  node:
+    version: 7.0
   environment:
     PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 
@@ -10,4 +12,6 @@ dependencies:
 
 test:
   override:
-    - yarn test
+    - yarn coverage
+  post:
+    - bash <(curl -s https://codecov.io/bash)
