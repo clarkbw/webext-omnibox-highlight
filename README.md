@@ -45,3 +45,14 @@ function handleResponse(response) {
 ## TODO
 
 **NOTE**: that you should use a library like [xml-escape](https://www.npmjs.com/package/xml-escape) to handle the required escaping before passing into these functions.
+
+## Publish
+
+When publishing a new build, run the following:
+
+```
+yarn run build
+yarn run prettier
+npm version (major | minor | patch)
+npm publish
+```
