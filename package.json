@@ -8,7 +8,6 @@
   "license": "ISC",
   "scripts": {
     "test": "jest",
-    "coverage": "yarn test -- --coverage",
     "build": "rollup -c",
     "prettier": "prettier --single-quote --trailing-comma es5 --write \"{src,__{tests,setups}__}/**/*.js\" rollup.config.js",
     "eslint-check": "eslint --print-config .eslintrc.json | eslint-config-prettier-check",
