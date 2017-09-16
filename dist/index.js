@@ -36,10 +36,11 @@ function url$2(text) {
   return text;
 }
 
-var match$$1 = isChrome ? match$1 : match$2;
-var url$$1 = isChrome ? url$1 : url$2;
-var dim$$1 = isChrome ? dim$1 : url$2;
+var match = isChrome ? match$1 : match$2;
+var url = isChrome ? url$1 : url$2;
+var dim = isChrome ? dim$1 : url$2;
 
-exports.match = match$$1;
-exports.url = url$$1;
-exports.dim = dim$$1;
+exports.match = match;
+exports.url = url;
+exports.dim = dim;
+//# sourceMappingURL=index.js.map
