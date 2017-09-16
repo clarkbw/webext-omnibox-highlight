@@ -1,6 +1,6 @@
 {
   "name": "webext-omnibox-highlight",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Handle the highlight of matches in the omnibox for both Firefox and Chrome",
   "main": "dist/index.js",
   "module": "src/index.js",
